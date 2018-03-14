@@ -1,0 +1,9 @@
+/.eggs/
+/andonapp.egg-info/
+/bin/
+/lib/
+/lib64
+/pip-selfcheck.json
+/pyvenv.cfg
+*.swp
+*/__pycache__/*
