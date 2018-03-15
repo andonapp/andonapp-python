@@ -1,19 +1,44 @@
+"""
+Packages custom Andon exceptions.
+"""
+
 class AndonAppException(Exception):
+    """
+    Generic catch-all exception when a request to Andon fails.
+    """
     pass
 
 class AndonBadRequestException(AndonAppException):
+    """
+    Generic exception when a request to Andon fails because there's something
+    wrong with the request.
+    """
     pass
 
 class AndonInternalErrorException(AndonAppException):
+    """
+    Generic exception when a request to Andon fails because there's something
+    wrong within Andon.
+    """
     pass
 
 class AndonInvalidRequestException(AndonAppException):
+    """
+    Exception when a request to Andon fails because one of the inputs is invalid.
+    """
     pass
 
 class AndonResourceNotFoundException(AndonAppException):
+    """
+    Exception when a request to Andon fails because a referenced resource
+    (such as a station) can't be found in the system.
+    """
     pass
 
 class AndonUnauthorizedRequestException(AndonAppException):
+    """
+    Exception when a request to Andon fails because it's unauthorized.
+    """
     pass
 
 def raise_from_error_response(response):
