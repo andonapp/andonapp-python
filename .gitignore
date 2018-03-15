@@ -1,7 +1,10 @@
 /.eggs/
 /andonapp.egg-info/
 /bin/
+/build/
+/dist/
 /lib/
+/man/
 /lib64
 /pip-selfcheck.json
 /pyvenv.cfg
