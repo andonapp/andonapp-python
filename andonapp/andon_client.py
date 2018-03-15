@@ -17,7 +17,9 @@ class AndonAppClient(object):
         self._auth_header_value = self.BEARER + api_token
         self.endpoint = self.DEFAULT_ENDPOINT
 
-    def report_data(self, line_name, station_name, pass_result, process_time_seconds, fail_reason=None, fail_notes=None):
+    def report_data(self, line_name, station_name,
+            pass_result, process_time_seconds,
+            fail_reason=None, fail_notes=None):
         request = {
             'orgName': self._org_name,
             'lineName': line_name,
@@ -39,7 +41,8 @@ class AndonAppClient(object):
         if response.status_code != requests.codes.ok:
             self._process_error_response(response)
 
-    def update_station_status(self, line_name, station_name, status_color, status_reason=None, status_notes=None):
+    def update_station_status(self, line_name, station_name,
+            status_color, status_reason=None, status_notes=None):
         request = {
             'orgName': self._org_name,
             'lineName': line_name,
@@ -61,6 +64,5 @@ class AndonAppClient(object):
             self._process_error_response(response)
 
     def _process_error_response(self, response):
-        print(response.json())
         raise_from_error_response(response.json())
         raise AndonAppException("Status {}: {}".format(response.status_code, response.text))
