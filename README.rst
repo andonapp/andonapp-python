@@ -77,7 +77,8 @@ And back to Green:
     client.update_station_status(
         line_name='line 1',
         station_name='station 1',
-        status_color='GREEN')
+        status_color='GREEN',
+        status_notes='notes')
 
 =======
 License
